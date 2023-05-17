@@ -1,7 +1,9 @@
 @import '../../../assets/scss/mixin/breakpoints.scss';
 
+$sidebar-width: 180px;
+
 :host {
-  --sidebar-width: 180px;
+  --sidebar-width: #{$sidebar-width};
   --sidebar-bg: black;
   --sidebar-text-color: #d3cece;
   --sidebar-text-active-color:white;
@@ -67,6 +69,14 @@
       &--toggle {
         margin-left: 0;
       }
+    }
+  }
+}
+
+::ng-deep {
+  @include breakpoint(md) {
+    #app-root {
+      margin-left: $sidebar-width;
     }
   }
 }
