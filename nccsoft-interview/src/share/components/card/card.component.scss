@@ -1,0 +1,19 @@
+:host {
+  .card {
+    .title {
+      margin-bottom: 16px;
+    }
+
+    .content {
+      &__img {
+        padding: 0 12px 4px 0;;
+        float: left;
+        height: 120px;
+      }
+
+      &__text {
+        font-size: 14px;
+      }
+    }
+  }
+}

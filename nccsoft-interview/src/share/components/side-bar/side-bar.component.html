@@ -1,0 +1,7 @@
+<section class="side-bar" [class.side-bar--toggle]="isShow">
+  <button class="side-bar__close" (click)="onToggle()">Icon menu</button>
+  <div class="side-bar__item" [class.side-bar__item--active]="d?.isActive" *ngFor="let d of data">
+    <a routerLink="d?.url">{{ d?.title }}</a>
+  </div>
+  <div *ngIf="!isShow" class="side-bar__overlay"></div>
+</section>

@@ -1,0 +1,71 @@
+@import '../../../assets/scss/mixin/breakpoints.scss';
+
+:host {
+  --sidebar-width: 180px;
+  --sidebar-bg: black;
+  --sidebar-text-color: #d3cece;
+  --sidebar-text-active-color:white;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: fit-content;
+  
+  .side-bar {
+    height: 100%;
+    width: var(--sidebar-width);
+    background: var(--sidebar-bg);
+
+    &__item {
+      cursor: pointer;
+      color: var(--sidebar-text-color);
+      border-bottom: .8px solid gray;
+      padding: 16px;
+      font-size: 18px;
+      text-transform: capitalize;
+
+      &:hover {
+        background: #eeeaea73;
+      }
+
+      &--active {
+        color: var(--sidebar-text-active-color);
+      }
+    }
+
+    &__close {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      white-space: nowrap;
+    }
+
+    &--toggle {
+      margin-left: -180px;
+    }
+
+    &__overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0.5;
+      z-index: -1;
+    }
+  }
+
+  @include breakpoint(md) {
+    .side-bar {
+      &__close, &__overlay {
+        display: none;
+      }
+
+      &--toggle {
+        margin-left: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+@import '../../assets/scss/mixin/breakpoints.scss';
+
+:host {
+  .home {
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+      display: flex;
+
+      &__img {
+        height: 80px;
+        margin: 0 auto 12px;
+      }
+    }
+
+    .paragraph {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+      padding: 24px;
+      text-align: center;
+      background: rgb(221, 216, 216);
+
+      &__title {
+        margin-bottom: 24px;
+      }
+
+      &__text {
+        max-width: 560px;
+        margin: auto;
+      }
+    }
+
+    .content {
+      display: grid;
+      gap: 40px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @include breakpoint(md) {
+    .home {
+      .content {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}
